@@ -2,9 +2,6 @@
 #Remove/hide terminal history, while keeping scrollback
 clear -x
 
-#Display message
-#echo "Out for coffee, back in 5"
-
 #Display ASCII art
 echo "
                         ██    ██    ██                            
@@ -26,5 +23,7 @@ start=$(date +%s)
 while true; do
     time="$(($(date +%s) - $start))"
     printf '%s\r' "		      Time passed: $(date -u -d "@$time" +%H:%M:%S)"
+	
+#Sleep to avoid CPU spam
 	sleep 0.1
 done
